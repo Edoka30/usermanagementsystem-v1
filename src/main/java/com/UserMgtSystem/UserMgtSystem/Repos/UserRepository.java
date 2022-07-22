@@ -23,5 +23,7 @@ public Page<User> findAll(Pageable pageable);
 
 public Page<User> findByCountryId(Integer countryId, Pageable pageable);
 
+public List<User> findByStatus(Boolean status);
+
 }
                                                                                                       

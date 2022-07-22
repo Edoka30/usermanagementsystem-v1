@@ -86,8 +86,18 @@ public class UserController {
 		logger.info("Updating................................");
 		return new ResponseEntity<User>(Userservice.updateUser(userId, userDto), HttpStatus.CREATED);
 	}
-@PatchMapping(value="/deactivateUser/")
-public String deactivateUser(@RequestParam("userId") String userId) throws Exception{
-	logger.info("Updating................................");
-	return Userservice.deactivateUser(userId);
-}}
+
+	@PatchMapping(value = "/deactivateUser/")
+	public String deactivateUser(@RequestParam("userId") String userId) throws Exception {
+		logger.info("Updating................................");
+		return Userservice.deactivateUser(userId);
+	}
+
+	@GetMapping(value = "/View-active-users")
+	public List<User> viewByStatus() {
+		boolean status =true;
+		logger.info("VIEW BY USER status" + status);
+		return Userservice.findActiverUsers(status);
+	}
+
+}

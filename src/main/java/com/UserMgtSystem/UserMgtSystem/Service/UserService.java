@@ -25,5 +25,5 @@ public interface UserService {
 	public User updateUser(String userId, UserDto userDto);
 	public Page<User> pageabledAllUsers(Optional<Integer> page, Optional<String> sortBy) throws Exception;
 	public String deactivateUser(String userId) throws Exception;
-
+public List<User> findActiverUsers(boolean status);
 }

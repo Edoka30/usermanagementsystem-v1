@@ -31,6 +31,7 @@ public class UserServiceImpl implements UserService {
 
 	@Override
 	public List<User> viewAllUser(Integer countryId) {
+	//	Boolean status =true;
 		return countryId == null ? (List<User>) repos.findAll() : repos.findByCountryId(countryId);
 	}
 
@@ -115,10 +116,18 @@ public class UserServiceImpl implements UserService {
 		if (user != null) {
 			email = user.getEmail();
 			user.setStatus(false);
+			
 			return "User with Email: " + email + " has been successfully deactivated ";
 		}
 		throw new BadRequestException("400", "UserId does not exist");
 
+	}
+
+	@Override
+	public List<User> findActiverUsers(boolean status) {
+		// TODO Auto-generated method stub
+		 status =true;
+		return repos.findByStatus(status);
 	}
 
 }
