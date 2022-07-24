@@ -15,10 +15,10 @@
 	<name>UserMgtSystem</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
-		<java.version>11</java.version>
-		<maven.compiler.target>11</maven.compiler.target>
-    <maven.compiler.source>11</maven.compiler.source>
-		
+		<java.version>18</java.version>
+		<maven.compiler.target>18</maven.compiler.target>
+		<maven.compiler.source>18</maven.compiler.source>
+
 	</properties>
 	<dependencies>
 		<dependency>
@@ -36,16 +36,13 @@
 			<scope>runtime</scope>
 			<optional>true</optional>
 		</dependency>
-		<!--  
+
+		<dependency> <groupId>mysql</groupId> <artifactId>mysql-connector-java</artifactId> 
+			<scope>runtime</scope> </dependency> 
+
 		<dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
-			<scope>runtime</scope>
-		</dependency>
-		  -->
-		  <dependency>
-			<groupId>mysql</groupId>
-			<artifactId>mysql-connector-java</artifactId>
+			<groupId>org.postgresql</groupId>
+			<artifactId>postgresql</artifactId>
 			<scope>runtime</scope>
 		</dependency>
 		<dependency>
@@ -58,6 +55,11 @@
 			<artifactId>validation-api</artifactId>
 			<version>${javax-validation.version}</version>
 		</dependency>
+		<dependency>
+        <groupId>javax.validation</groupId>
+        <artifactId>validation-api</artifactId><!--$NO-MVN-MAN-VER$-->
+        <version>1.1.0.Final</version>
+    </dependency>
 		<!-- https://mvnrepository.com/artifact/io.springfox/springfox-boot-starter -->
 		<dependency>
 			<groupId>io.springfox</groupId>
