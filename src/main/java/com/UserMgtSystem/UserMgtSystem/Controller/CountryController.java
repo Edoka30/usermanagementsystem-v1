@@ -21,6 +21,9 @@ public class CountryController {
 
 	@GetMapping(value = "/fetch-countries")
 	public ResponseEntity<?> ftechCountries()throws Exception {
+		if(countryService.fetchCountries()==null) {
+			return new ResponseEntity<>(countryService.fetchCountries(), HttpStatus.BAD_REQUEST);
+		}
 		return new ResponseEntity<>(countryService.fetchCountries(), HttpStatus.CREATED);
 	}
 
