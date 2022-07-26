@@ -32,7 +32,8 @@ public class CountryServiceImpl implements CountryService {
 		List<CountryDto> countries = response.getBody().getData();
 
 		List<Country> countryList = new ArrayList<>();
-		for (CountryDto c : countries) {
+		for (CountryDto c : countries)
+		{
 			if (repos.findByCountryName(c.getName()) != null) {
 				continue;
 			}
