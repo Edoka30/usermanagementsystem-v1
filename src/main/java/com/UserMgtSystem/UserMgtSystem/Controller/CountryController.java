@@ -19,15 +19,13 @@ public class CountryController {
 	@Autowired
 	CountryService countryService;
 
-	@GetMapping(value = "/fetch-countries")
+	
+	@GetMapping(value = "/countries")
 	public ResponseEntity<?> ftechCountries()throws Exception {
-		if(countryService.fetchCountries()==null) {
-			return new ResponseEntity<>(countryService.fetchCountries(), HttpStatus.BAD_REQUEST);
-		}
 		return new ResponseEntity<>(countryService.fetchCountries(), HttpStatus.CREATED);
 	}
 
-	@GetMapping(value = "/countries")
+	@GetMapping(value = "/fetch-countries")
 	public List<Country> getAllcountries() {
 		return countryService.getAllcountries();
 
