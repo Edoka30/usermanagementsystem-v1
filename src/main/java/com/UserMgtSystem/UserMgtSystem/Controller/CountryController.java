@@ -29,17 +29,18 @@ public class CountryController {
 			e.printStackTrace();
 		}
 		return null;
-
 	}
 
+	
 	@GetMapping(value = "/fetch-countries")
 	public List<Country> getAllcountries() {
 		return countryService.getAllcountries();
 
 	}
 
-	public String uploadCsvfile(@RequestParam("file") MultipartFile file) throws Exception {
+	public String csvUploadCountryList(@RequestParam("file") MultipartFile file) throws Exception {
 		// countryService.uploadCsvfile(file);
 		return countryService.uploadCsvfile(file);
 	}
+	
 }
