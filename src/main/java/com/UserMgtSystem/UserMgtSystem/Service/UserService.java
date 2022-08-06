@@ -23,7 +23,10 @@ public interface UserService {
 	public List<User> findByCountryId(int countrid);
 
 	public User updateUser(String userId, UserDto userDto);
+
 	public Page<User> pageabledAllUsers(Optional<Integer> page, Optional<String> sortBy) throws Exception;
+
 	public String deactivateUser(String userId) throws Exception;
-public List<User> findActiverUsers(boolean status);
+
+	public List<User> findActiverUsers(boolean status);
 }

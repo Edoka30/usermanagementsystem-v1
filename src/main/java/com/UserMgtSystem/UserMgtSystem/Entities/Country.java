@@ -12,12 +12,14 @@ import javax.persistence.OneToMany;
 import javax.persistence.Transient;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.opencsv.bean.CsvBindByName;
 
 @Entity
 public class Country {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private int id;
 	private String countryCode;
 	private String countryName;
@@ -28,6 +30,12 @@ public class Country {
 	private List<User> users;
 
 	public Country() {
+	}
+	public Country(String countryCode, String countryName, String shortCode) {
+		
+		this.countryCode = countryCode;
+		this.countryName = countryName;
+		this.shortCode = shortCode;
 	}
 
 	public Country(String countryCode, String countryName, String shortCode, List<User> users) {
