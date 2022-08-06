@@ -1,4 +1,4 @@
-package com.UserMgtSystem.UserMgtSystem.config;
+                                                                                                                                                       package com.UserMgtSystem.UserMgtSystem.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
